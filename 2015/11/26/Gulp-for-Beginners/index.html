@@ -1,0 +1,1239 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-next">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv=”Cache-Control” content=”no-transform” />
+<meta http-equiv=”Cache-Control” content=”no-siteapp” />
+
+
+  <meta name="keywords" content=" ,Gulp,前端自动化, " />
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+
+
+  <title> Gulp初学者指南 - FakeCityMan's Blog </title>
+</head>
+
+<body>
+<!--[if lte IE 8]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://static.ixirong.com/picouterie.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari." style='margin-left:auto;margin-right:auto;display: block;'/></a></div> <![endif]-->
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+
+    <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|UCBrowser|MQQBrowser|Blazer|PSP|IEMobile|Symbian|Mobile|samsung|htc/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+
+  function displaySidebar () {
+    setTimeout(function () {
+      $('.sidebar-toggle').trigger('click');
+    }, 800);
+  }
+
+</script>
+
+
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">FakeCityMan's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    <div class="c-search-form-div" style="display:none;">
+      
+      
+    </div>
+    <script type="text/javascript">
+      if(isDesktop() || isTablet()){        
+        $('.c-search-form-div').css("display","inline");
+      }    
+    </script>
+
+    
+      
+      
+        <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+      
+    
+      
+      
+        <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+      
+    
+      
+      
+        <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分类
+        </a>
+      </li>
+      
+    
+      
+      
+        <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+      
+    
+
+    <script type="text/javascript">
+      if(!isMobile()){
+         $('.menu-item-commonweal').css("display","");
+      }
+    </script>
+
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Gulp初学者指南
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-11-26
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/前端自动化/">前端自动化</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/11/26/Gulp-for-Beginners/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/26/Gulp-for-Beginners/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <blockquote>
+<p>此篇为<a href="http://www.zell-weekeat.com/" target="_blank" rel="external">Zell Liew</a>发布在<a href="https://css-tricks.com" target="_blank" rel="external">css tricks</a>上的<a href="https://css-tricks.com/gulp-for-beginners/" target="_blank" rel="external">《Gulp for Beginners》</a>译文，全文详细指导使用gulp搭建一套简单完整的前端自动化流程，在此做中文翻译，以供和我一样的前端自动化初学者学习，如有翻译不足之处，请见谅。<br>——<a href="https://github.com/kalechao87" target="_blank" rel="external">Kale Chao | FakeCityMan</a></p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Gulp概述">Gulp概述</h1><hr>
+<p><a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a>是帮你在Web开发时处理多项任务的工具，常用来处理类似以下的前端任务：</p>
+<ul>
+<li>启动服务端口</li>
+<li>文件保存时自动重加载（刷新）浏览器</li>
+<li>使用像Sass或Less css预处理器</li>
+<li>优化CSS， Javascript和图像资源</li>
+</ul>
+<p>以上并非Gulp能做的所有事情，Gulp极其强大，你可以使用Gulp创建适合你自己的前端自动化构建流程。<br>本文旨在帮你熟悉Gulp的基础功能，学会这些基础，其他功能可自行开发。</p>
+<hr>
+<h1 id="安装Gulp">安装Gulp</h1><hr>
+<p>在安装Gulp之前，首先需安装Node.js(Node)。<br>如果你的电脑还没安装Node，先去<a href="https://nodejs.org/en/" target="_blank" rel="external">Node官网</a>下载安装程序进行安装。<br>安装好Node.js和NPM后（NPM会在安装Node的同时自动安装上），在命令行输入如下命令安装Gulp：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install gulp -g</span><br><span class="line"><span class="comment"># 注: 仅Mac用户需要输入`sudo`</span></span><br></pre></td></tr></table></figure></p>
+<p><code>$</code>符号仅仅是命令象征符号，在运行命令时不用输入。<br><code>npm install</code>是用来安装像Gulp这种NPM包的命令。<br><code>-g</code>告诉npm在电脑上全局安装Gulp，这样可以在你系统中任意地方使用<code>gulp</code>命令。<br>Mac用户通过额外使用<code>sudo</code>启用管理员权限保证Gulp全局安装。<br>Gulp已安装完毕，接下来使用Gulp创建工程项目。</p>
+<hr>
+<h1 id="创建Gulp工程项目">创建Gulp工程项目</h1><hr>
+<p>首先我们创建一个名叫<code>project</code>（你可以做其他命名，仅仅是个文件夹）的文件夹作为我们本教程的工程目录。命令行进入该目录（不会的同学可自行百度），运行<code>npm init</code>命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ... from within our project folder</span></span><br><span class="line">$ npm init</span><br></pre></td></tr></table></figure></p>
+<p><code>npm init</code>命令为项目创建<code>package.josn</code>的文件用来储存关于项目的信息，比如你项目的依赖工具(Gulp就是本项目的一项依赖工具)。<br><code>npm init</code>让你确认输入如下信息（每项均会在你输入时有提示，如果你输入格式不正确或其他错误，命令行均会有相应提示，按提示修正输入信息即可）<br><img src="/images/Gulp-for-Beginners/npm-init.png" alt="npm init"></p>
+<p><code>package.json</code>文件创建后，用如下命令在当前项目中安装Gulp：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>这次是在项目文件夹<code>project</code>中安装Gulp而非全局安装，所以命令有所不同。<br>可以看到不需要<code>sudo</code>，因为不是全局安装Gulp，<code>-g</code>同样也不需要。<code>--save-dev</code>告诉电脑<code>gulp</code>在<code>package.json</code>中作为开发依赖。<br><img src="/images/Gulp-for-Beginners/package-json.png" alt="package json"></p>
+<p>当命令执行完毕，你可以看到Gulp创建了<code>node_modules</code>文件夹。同时在<code>node_modules</code>文件夹下会看到<code>gulp</code>文件夹。<br><img src="/images/Gulp-for-Beginners/node-modules.png" alt="node modules"></p>
+<p>当前已几乎准备好使用Gulp进行开发了，在此之前，为保证清晰的在项目中使用Gulp，其中一部分是先决定项目目录结构。</p>
+<hr>
+<h1 id="决定项目目录结构">决定项目目录结构</h1><hr>
+<p>无论何种目录结构，Gulp都可以顺畅就行工作。针对此文章，我们使用通用的webapp开发目录结构：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|- app/</span></span><br><span class="line">    <span class="string">|- css/</span></span><br><span class="line">    <span class="string">|- fonts/</span></span><br><span class="line">    <span class="string">|- images/</span></span><br><span class="line">    <span class="string">|- index.html</span></span><br><span class="line">    <span class="string">|- js/</span></span><br><span class="line">    <span class="string">|- scss/</span></span><br><span class="line"><span class="string">|- dist/</span></span><br><span class="line"><span class="string">|- gulpfile.js</span></span><br><span class="line"><span class="string">|- node_modules/</span></span><br><span class="line"><span class="string">|- package.json</span></span><br></pre></td></tr></table></figure></p>
+<p>在此结构中，我们使用<code>app</code>文件夹作为开发目录，<code>dist</code>文件夹作为生产目录（包含优化的文件用来正式部署）。<br><code>app</code>作为开发目录文件夹，我们所有的开发代码放置此目录下。在进行Gulp配置时，要对项目目录结构做到心中有数。现在，在<code>gulpfile.js</code>中进行我们的第一项Gulp任务，此文件用来保存所有的Gulp配置。</p>
+<hr>
+<h1 id="进行第一项Gulp任务">进行第一项Gulp任务</h1><hr>
+<p>第一步先将Gulp“引入”<code>require</code>gulpfile中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>此项声明告诉Node在<code>node_modules</code>文件夹中查找名为<code>gulp</code>的包，一旦找到，将他的内容赋予<code>gulp</code>变量。<br>现在我们可以使用<code>gulp</code>变量创建gulp任务，一项gulp任务的基础语法为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'task-name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Stuff here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>task-name</code>为任务名称，除了在Gulp中作为函数运行此任务，还可以在命令行通过<code>gulp task-name</code>直接运行此任务。<br>我们来创建名为<code>hello</code>的任务来说<code>Hello Zell!</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello Zell'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>同样我们可以在命令行使用<code>gulp hello</code>执行此任务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp hello</span><br></pre></td></tr></table></figure></p>
+<p>此命令将输出<code>Hello Zell!</code><br><img src="/images/Gulp-for-Beginners/hello.png" alt="hello"></p>
+<p>Gulp常规任务通常要比这稍复杂些，通常包含两个额外Gulp条件方法，外加一系列的Gulp插件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'task-name'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'source-files'</span>) <span class="comment">// 通过gulp.src获取源文件</span></span><br><span class="line">    .pipe(aGulpPlugin()) <span class="comment">// 将源文件经过Gulp插件进行处理</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'destination'</span>)) <span class="comment">// 将处理后的文件输出至目标路径</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>如你所见，一项真正的任务包含两条gulp方法——<code>gulp.src</code>和<code>gulp.dest</code>。<br><code>gulp.src</code>告诉Gulp任务我们在当前任务中使用哪些文件，<code>gulp.dest</code>告诉Gulp任务完成后将文件输出到哪。<br>让我们来试着构建一项实际任务——将Sass文件输出为CSS文件。</p>
+<hr>
+<h1 id="Gulp预处理流程">Gulp预处理流程</h1><hr>
+<p>我们可以在Gulp中通过<a href="https://www.npmjs.com/package/gulp-sass" target="_blank" rel="external">gulp-sass</a>插件将Sass编译为CSS。你可以在你的项目目录中通过<code>npm install</code>命令像之前安装<code>gulp</code>一样来安装gulp-sass。<br>同时使用<code>--save-dev</code>标记确保gulp-sass添加至<code>package-json</code>中的<code>devDependencies</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp-sass --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>要使用插件，我们需像之前使用<code>gulp</code>插件一样从<code>node_modules</code>文件夹中先请求<code>require</code> <code>gulp-sass</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="comment">// Requires the gulp-sass plugin</span></span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>将<code>aGulpPlugin()</code>替换为<code>sass()</code>来使用gulp-sass。此任务将把Sass编译为CSS，同时把任务名称命名为<code>sass</code>。<br><img src="/images/Gulp-for-Beginners/pipe-1.png" alt="sass"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'source-files'</span>)</span><br><span class="line">    .pipe(sass()) <span class="comment">// 使用gulp-sass</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'destination'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>我们需要为<code>sass</code>任务提供要处理的源文件目录及输出目标文件目录来让任务执行，因此我们在<code>app/scss</code>目录下创建<code>style.scss</code>文件。此文件将添加至<code>sass</code>任务的<code>gulp.src</code>中。<br>我们想输出最终文件<code>style.css</code>至<code>app/css</code>目录中，即<code>gulp.dest</code>的输出目录。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/scss/styles.scss'</span>)</span><br><span class="line">    .pipe(sass()) <span class="comment">// 使用gulp-sass将Sass文件转换为CSS</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'app/css'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>我们通过在<code>styles.scss</code>文件中使用Sass语法来测试下<code>sass</code>任务。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// styles.scss</span></span><br><span class="line"><span class="class">.testing</span> &#123;</span><br><span class="line">  <span class="attribute">width</span><span class="value">: <span class="function">percentage</span>(<span class="number">5</span>/<span class="number">7</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在命令行运行<code>gulp sass</code>。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp sass</span><br></pre></td></tr></table></figure></p>
+<p>你将看到<code>app/css</code>目录中生成了<code>styles.css</code>文件，同时将<code>percentage(5/7)</code>代码自动求值输出为<code>71.42857%</code>。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* styles.css */</span></span><br><span class="line"><span class="class">.testing</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">71.42857%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>这我们就知道<code>sass</code>任务可以正常工作了！<br>有时我们想同时将多个<code>.scss</code>文件编译为CSS，我们可以借助<code>Node globs</code>(返回目录子文件)。</p>
+<blockquote>
+<p>gulp-sass使用LibSass将Sass转换为CSS，它比基于Ruby的方法快很多。如果你想在Gulp中使用Ruby方式，请使用<a href="https://github.com/sindresorhus/gulp-ruby-sass" target="_blank" rel="external">gulp-ruby-sass</a>或<a href="https://www.npmjs.com/package/gulp-compass" target="_blank" rel="external">gulp-compass</a>插件</p>
+</blockquote>
+<hr>
+<h1 id="Globbing_in_Node（在Node中通配）">Globbing in Node（在Node中通配）</h1><hr>
+<p>通配（Globs）即将多个文件以匹配样式添加至<code>gulp.src</code>中，它像正则表达式，只不过是用来处理文件路径。<br>当你运用通配是，电脑将按特定的规则样式来检查文件名和路径，当规则样式存在，文件就被匹配。</p>
+<p>大多数的Gulp工作流仅需匹配4种通配样式：</p>
+<ol>
+<li><code>*.scss</code> : <code>*</code>模式是用来匹配当前目录所有文件的通配符。本案中，我们将匹配根目录文件夹<code>(project)</code>下任何以<code>.scss</code>结尾的文件。</li>
+<li><code>**/*.scss</code> : 可看作<code>*</code>模式的极限版本——匹配根目录以及所有子目录下以<code>.scss</code>结尾的所有文件。</li>
+<li><code>!not-me.scss</code> : <code>!</code>标示了Gulp需排除掉它的匹配模式，通常用来在一个匹配模式中排除单个文件。本案中，<code>not-me.scss</code>将被排除过滤。</li>
+<li><code>*.+(scss|sass)</code> : <code>+</code> 加号和 <code>()</code> 圆括号允许Gulp匹配多种模式/样式，不同的模式通过<code>|</code>分割开来。本案中，Gulp将匹配根目录文件夹下任何以<code>.scss</code>和<code>.sass</code>结尾的文件。</li>
+</ol>
+<p>了解了通配规则，我们将路径样式规则<code>app/scss/style.scss</code>替换为<code>app/scss/**/*.scss</code>，用来匹配<code>app/scss</code>目录及其子目录下任何以<code>.scss</code>扩展名结尾的所有文件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/scss/**/*.scss'</span>) <span class="comment">// Gets all files ending with .scss in app/scss and children dirs</span></span><br><span class="line">    .pipe(sass())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'app/css'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>此时，任何在<code>app/scss</code> 目录中的Sass文件（.scss）将进入<code>sass</code>任务流中。如果你在项目中添加一个<code>print.scss</code>文件，执行<code>sass</code>任务后，你将看到<code>app/css</code>目录下自动生成了<code>print.css</code>文件。<br><img src="/images/Gulp-for-Beginners/second-stylesheet.png" alt="second-stylesheet"></p>
+<p>现在，我们可以通过一条命令<code>gulp sass</code>将所有的Sass文件编译为CSS文件。问题是：当我们需要将Sass文件编译为CSS文件时，就必需手工执行一次<code>gulp sass</code>命令，这有什么好处？</p>
+<p>幸运的是，当一个文件保存的同时，我们可以通过一个叫<code>watching</code>（实时监控）的流程来告诉Gulp自动执行<code>sass</code>任务。</p>
+<hr>
+<h1 id="Sass文件改变时进行实时监控">Sass文件改变时进行实时监控</h1><hr>
+<p>Gulp提供了<code>watch</code>的方法用来查看某个文件是否被保存。<code>watch</code>方法的语法为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Gulp watch syntax</span></span><br><span class="line">gulp.watch(<span class="string">'files-to-watch'</span>, [<span class="string">'tasks'</span>, <span class="string">'to'</span>, <span class="string">'run'</span>]);</span><br></pre></td></tr></table></figure>
+<p>如果我们想实时监测Sass文件，并且当某个Sass文件保存时同时运行<code>sass</code>任务，仅需将<code>files-to-watch</code>,替换为<code>app/scss/**/*.scss</code>, 以及<code>[&#39;tasks&#39;, &#39;to&#39;, &#39;run&#39;]</code>替换为<code>[&#39;sass&#39;]</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Gulp watch syntax</span></span><br><span class="line">gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br></pre></td></tr></table></figure>
+<p>然而通常我们将同时监测不同类型的文件。为此，我们可以将多种监测过程组织到一个<code>watch</code>任务中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  <span class="comment">// 其他监测对象</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>如果现在在命令行运行<code>gulp watch</code>，你将看到Gulp立即开始执行监测任务。<br><img src="/images/Gulp-for-Beginners/gulp-watch-start.png" alt="gulp watch start"></p>
+<p>同时当你保存<code>.scss</code>文件时会自动执行sass任务。<br><img src="/images/Gulp-for-Beginners/watch-compile.gif" alt="watch compile"></p>
+<p>让我们更近一步，当我们保存<code>.scss</code>文件时，借助<a href="http://www.browsersync.io/" target="_blank" rel="external">Browser Sync</a>让Gulp自动刷新浏览器。</p>
+<hr>
+<h1 id="通过Browser_Sync自动刷新(重加载)">通过Browser Sync自动刷新(重加载)</h1><hr>
+<p>Browser Sync通过启动服务器帮我们自动刷新，这使得Web开发更为容易。它还有其他功能特性，比如<a href="http://addyosmani.com/blog/browser-sync/" target="_blank" rel="external">跨多个终端通过动作</a>。</p>
+<p>首先来安装Brower Sync：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install browser-sync --save-dev</span><br></pre></td></tr></table></figure>
+<p>也许你注意到安装Browser Sync是并没有<code>gulp-</code>前缀。这是因为Browser Sync可以直接与Gulp一同工作，因此并不需要一个插件。</p>
+<p>使用Browser Sync，先得在gulp.js中<code>require</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>我们需要创建一个<code>browsersync</code>任务来让Gulp使用Browser Sync启动服务器。因为我们在运行一个服务器，我们需要让Browser Sync知道服务器根目录是哪。本案中，根目录为<code>app</code>文件夹。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'browserSync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  browserSync(&#123;</span><br><span class="line">    server: &#123;</span><br><span class="line">      baseDir: <span class="string">'app'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>同样我们得稍微改造下<code>sass</code>任务，这样在任何时候当<code>sass</code>任务运行时，Browser Sync能将新的CSS样式（更新CSS）注入浏览器。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/scss/**/*.scss'</span>) <span class="comment">// Gets all files ending with .scss in app/scss</span></span><br><span class="line">    .pipe(sass())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'app/css'</span>))</span><br><span class="line">    .pipe(browserSync.reload(&#123;</span><br><span class="line">      stream: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>到此，我们已完成Browser sync的配置。现在我们需要同时运行<code>watch</code>和<code>browserSync</code>任务来确保实时刷新。<br>打开两个命令行窗口分别运行<code>gulp browserSync</code>、<code>gulp watch</code>会显得很麻烦，因此，我们可以通过告诉<code>watch</code>任务必须先完成<code>browsersyn</code>任务才能执行<code>watch</code>任务，这样就可以让Gulp一起执行这两个任务了。<br>我们在<code>watch</code>任务中添加一个二级参数。语法为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'array'</span>, <span class="string">'of'</span>, <span class="string">'tasks'</span>, <span class="string">'to'</span>, <span class="string">'complete'</span>,<span class="string">'before'</span>, <span class="string">'watch'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>此案例中，我们将BrowserSync任务添加进去。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'browserSync'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  <span class="comment">// Other watchers</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>同样，我们想确保在<code>watch</code>任务执行前先执行<code>sass</code>任务，这样我们在任何时候运行Gulp命令时，CSS将一直是最新的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'browserSync'</span>, <span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  <span class="comment">// Other watchers</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>现在，如果我们在命令行运行<code>gulp watch</code>，Gulp先将同时运行<code>sass</code>和<code>browserSync</code>任务。当这两个任务执行完毕，<code>watch</code>将启动执行。<br><img src="/images/Gulp-for-Beginners/bs-watch.png" alt="bs watch"><br>同时，一个指向<code>app/index.html</code>的浏览器窗口将自动启动弹出。如果我们改变<code>styles.scss</code>文件时，你将看到浏览器会自动重新加载。<br><img src="/images/Gulp-for-Beginners/bs-change-bg.gif" alt="bs-change-bg"><br>在结束实时加载部分前，还有’One more Thing’。既然我们可以实时监测<code>.scss</code>文件来让实时刷新，为何不更进一步，当任何HTML或JavaScript文件改变保存时也让浏览器实时刷新加载。</p>
+<p>我们可以添加另外两条监测过程来实现，并且当一个文件保存时执行<code>browserSync.reload</code>回调函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'browserSync'</span>, <span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  <span class="comment">// Reloads the browser whenever HTML or JS files change</span></span><br><span class="line">  gulp.watch(<span class="string">'app/*.html'</span>, browserSync.reload);</span><br><span class="line">  gulp.watch(<span class="string">'app/js/**/*.js'</span>, browserSync.reload);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>目前为止，本教程中我们关注三件事情：</p>
+<ol>
+<li>为开发过期启动服务器</li>
+<li>使用Sass预处理器</li>
+<li>当一个文件保存时自动重加载浏览器。</li>
+</ol>
+<p>在下一部分我们来进行优化资源。我们将通过优化CSS和JavaScript文件作为开场。</p>
+<hr>
+<h1 id="优化CSS和JavaScript文件">优化CSS和JavaScript文件</h1><hr>
+<p>当我们为生产环境优化CSS和JavaScript文件时，有两个任务进行操作：压缩(minification)和合并(concatenation)。</p>
+<p>当自动化处理此流程时，摆在开发者面前的一个问题是很难以正确的顺序对脚本文件(scripts)进行合并。</p>
+<p>假如<code>index.html</code>文件中包含三个脚本标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- other stuff --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/a-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/another-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这些脚本文件分布于两个不同的文件夹。通过传统的插件如<a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="external">gulp-concatenate</a>很难合并它们。<br>幸运的是，有个非常有用的Gulp插件，<a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="external">gulp-useref</a>来解决这个问题。<br>Gulp-useref通过查找一条以 “&lt;!--build: --&gt;”开头、 “&lt;!--endbuild--&gt;”结尾的注释来将任意数量的CSS或JavaScript文件合并为一个文件。他的语法是：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- build:&lt;type&gt; &lt;path&gt; --&gt;</span></span><br><span class="line">... HTML Markup, list of script / link tags.</span><br><span class="line"><span class="comment">&lt;!-- endbuild --&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;type&gt;</code>可以是<code>js</code>,<code>css</code>,或<code>remove</code>。最好将<code>type</code>设置为你要合并的文件类型。如果你将<code>type</code>设置为<code>remove</code>,Gulp将把整个<code>build</code>块内容移除而不生成任何文件。<br><code>&lt;path&gt;</code>为生成文件的目标路径。<br>我们想让最终JavaScript文件生成至<code>js</code>文件夹，并命名为<code>main.min.js</code>。因此，标记为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--build:js js/main.min.js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/a-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/another-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- endbuild --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>现在我们在gulpfile中来配置gulp-useref插件。我们需安装插件并在gulpfile中来请求(require)它。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-useref --save-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> useref = <span class="built_in">require</span>(<span class="string">'gulp-useref'</span>);</span><br></pre></td></tr></table></figure>
+<p>设置<code>use-ref</code>任务和我们之前配置过的其他任务类似。不同的是我们必须在<code>gulp.src</code>之前调用<code>useref.assets()</code>功能。代码为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> assets = useref.assets();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)</span><br><span class="line">    .pipe(assets)</span><br><span class="line">    .pipe(assets.restore())</span><br><span class="line">    .pipe(useref())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>现在如果运行<code>useref</code>任务，Gulp将遍历3个script标签并将他们合并至<code>dist/js/main.min.js</code>。<br><img src="/images/Gulp-for-Beginners/main-min.png" alt="main-min"><br>然而现在此文件并没被压缩。我们需要使用<a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="external">gulp-uglify</a>插件将JavaScript文件压缩。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-uglify --save-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Other requires...</span></span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> assets = useref.assets();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)</span><br><span class="line">    .pipe(assets)</span><br><span class="line">    .pipe(uglify()) <span class="comment">// Uglifies Javascript files</span></span><br><span class="line">    .pipe(assets.restore())</span><br><span class="line">    .pipe(useref())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>当运行<code>useref</code>任务时，Gulp会自动将<code>main.min.js</code>压缩。<br>正如之前指出， Gulp-useref会自动将包含在”&lt;!--build: --&gt;”和 “&lt;!--endbuild--&gt;”之间的脚本整合至一个JavaScript文件并指向<code>js/main.min.js</code>。<br><img src="/images/Gulp-for-Beginners/useref-html.png" alt="useref-html"><br>很棒，不是吗？<br>我们可以使用同样的方法来合并和压缩css代码（如果你决定处理多条css文件）。我们将依照同样的流程并且添加一条<code>build</code>注释。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--build:css css/styles.min.css--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/styles.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/another-stylesheet.css"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--endbuild--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>由于我们现在将CSS文件处理加入了“管线处理”(pipeline)中，因此<code>useref</code>任务需稍微调整下。我们不想让<code>uglify()</code>来处理CSS文件，因为它会弄的乱七八糟。<br>我们需确保<code>uglify()</code>只处理JavaScript文件，通过<a href="https://www.npmjs.com/package/gulp-if" target="_blank" rel="external">gulp-if</a>插件可以实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-if --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Other requires...</span></span><br><span class="line"><span class="keyword">var</span> gulpIf = <span class="built_in">require</span>(<span class="string">'gulp-if'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> assets = useref.assets();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)</span><br><span class="line">    .pipe(assets)</span><br><span class="line">    <span class="comment">// Uglifies only if it's a Javascript file</span></span><br><span class="line">    .pipe(gulpIf(<span class="string">'*.js'</span>, uglify()))</span><br><span class="line">    .pipe(assets.restore())</span><br><span class="line">    .pipe(useref())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>同样我们可以让Gulp-useref任务来处理压缩CSS文件，不过需要借助<a href="https://www.npmjs.com/package/gulp-minify-css" target="_blank" rel="external">gulp-minify-css</a>插件来实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-minify-css</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minifyCSS = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> assets = useref.assets();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)</span><br><span class="line">    .pipe(assets)</span><br><span class="line">    <span class="comment">// Minifies only if it's a CSS file</span></span><br><span class="line">    .pipe(gulpIf(<span class="string">'*.css'</span>, minifyCSS()))</span><br><span class="line">    <span class="comment">// Uglifies only if it's a Javascript file</span></span><br><span class="line">    .pipe(gulpIf(<span class="string">'*.js'</span>, uglify()))</span><br><span class="line">    .pipe(assets.restore())</span><br><span class="line">    .pipe(useref())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>现在当你在任何时候运行<code>useref</code>任务时，你会得到一个优化过的CSS文件和一个优化过的JavaScript文件。<br>我们继续，接下来优化图片。</p>
+<hr>
+<h1 id="优化图片">优化图片</h1><hr>
+<p>大概你也猜到了，我们需要使用<a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external">gulp-imagemin</a>插件来优化图片。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-imagemin --save-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</span><br></pre></td></tr></table></figure>
+<p>在gulp-imagemin的帮助下，我们可以对<code>png</code>, <code>jpg</code>, <code>gif</code>甚至<code>svg</code>进行压缩，我们为此优化流程创建一个<code>images</code>的任务。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/images/**/*.+(png|jpg|gif|svg)'</span>)</span><br><span class="line">  .pipe(imagemin())</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'dist/images'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>由于不同类型的图片文件可以采用不同的方式优化，你也许想对<code>imagemin</code>添加针对不同类型文件优化的相应选项。</p>
+<p>比如说，针对Gif图片，你可以通过将<code>interlaced</code>选项设置为<code>true</code> 来创建<a href="http://vesta.astro.amu.edu.pl/Library/WWW/Tutorial1/graphics/gif_files.html" target="_blank" rel="external">interlaced</a>隔行扫描类型的Gif。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/images/**/*.+(png|jpg|jpeg|gif|svg)'</span>)</span><br><span class="line">  .pipe(imagemin(&#123;</span><br><span class="line">      <span class="comment">// Setting interlaced to true</span></span><br><span class="line">      interlaced: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'dist/images'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如你所想，你可以把玩其他选项。<br>优化图片是极慢的处理过程，因此，如无必要，你不会想一直重复这个流程。为此，我们可使用<a href="https://www.npmjs.com/package/gulp-cache" target="_blank" rel="external">gulp-cache</a>插件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-cache --save-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/images/**/*.+(png|jpg|jpeg|gif|svg)'</span>)</span><br><span class="line">  <span class="comment">// Caching images that ran through imagemin</span></span><br><span class="line">  .pipe(cache(imagemin(&#123;</span><br><span class="line">      interlaced: <span class="literal">true</span></span><br><span class="line">    &#125;)))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'dist/images'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>针对优化过程，我们已接近尾声。还有一个额外的文件夹——fonts文件夹，我们想把它直接从<code>app</code>目录输出至<code>dist</code>目录。我们来处理这个问题。</p>
+<hr>
+<h1 id="将Fonts目录复制至Dist目录">将Fonts目录复制至Dist目录</h1><hr>
+<p>既然字体文件已经被优化，因此我们不需多做什么。所要做的只是将字体目录拷贝至<code>dist</code>目录。</p>
+<p>通过指定<code>gulp.src</code>及<code>gulp.dest</code>而不用其他任何插件即可实现通过Gulp复制文件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'fonts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'app/fonts/**/*'</span>)</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'dist/fonts'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>现在，无论你何时运行<code>gulp fonts</code>任务，Gulp将把<code>fonts</code>从<code>app</code>目录直接复制到<code>dist</code>目录。<br><img src="/images/Gulp-for-Beginners/font-copy.png" alt="font-copy"></p>
+<p>现在，在gulpfile中我们有6个不同的任务，并且在命令行我们可以对它们进行单独调用，这有些麻烦，我们想把这些整合进一条命令中。</p>
+<p>在实现这个目的之前，我们先来看看如何自动清理生成的文件。</p>
+<hr>
+<h1 id="自动清理生成的文件">自动清理生成的文件</h1><hr>
+<p>由于我们是自动生成文件，在我们不知情的情况下，我们也想确保那些不再使用的文件不要出现在任何地方。</p>
+<p>这个过程叫做清除（或者简单来说：删除文件）。<br>我们将使用<a href="https://www.npmjs.com/package/del" target="_blank" rel="external">del</a>插件来实现清除过程。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install del --save-dev</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> del = <span class="built_in">require</span>(<span class="string">'del'</span>);</span><br></pre></td></tr></table></figure>
+<p><code>del</code>功能通过配置一组节点模型(node globs)数组来告诉它要删除那些文件夹。<br>将它设置为Gulp任务就像我们第一个”hello”例子一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  del(<span class="string">'dist'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>现在我们运行<code>gulp clean</code>。Gulp将删除<code>dist</code>文件夹。<br>不过，像我们之前提过的，我们尽量避免运行<code>images</code>任务因为它花费的时间太多。</p>
+<p>因此，我们可以创建一个常用的单独清除任务——它清除<code>dist</code>文件夹中除<code>images</code>外的所有文件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'clean:dist'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">  del([<span class="string">'dist/**/*'</span>, <span class="string">'!dist/images'</span>, <span class="string">'!dist/images/**/*'</span>], callback)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>首先，我们删除<code>dist/**/*</code>中的所有文件，然而，我们不想删除<code>dist/images</code>,因此<code>dist/images</code>前需要<code>!</code>标识符，我们同样不想删除<br><code>dist/images</code>的任何文件，因此我们需要第三项配置。<br>最后，我们需要知道<code>clean:dist</code>何时结束，因此我们需给<code>del</code>提供回掉参数。<br>在标准的<code>clean</code>任务中，我们想确保清除gulp缓存因此<code>images</code>任务将把所有的图片再处理一遍。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  del(<span class="string">'dist'</span>);</span><br><span class="line">  <span class="keyword">return</span> cache.clearAll(callback);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>译者注：这篇文章之后<code>del</code>在2.0版本对使用方式进行了大的调整。可以通过如下命令安装1.2.1版本而非最新版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install del@<span class="number">1.2</span>.<span class="number">1</span> --save-dev</span><br></pre></td></tr></table></figure>
+<p>或者自行研究2.0版本的语法自行构建<code>clean</code>任务。</p>
+<p>现在我们将所有的任务整合起来。</p>
+<hr>
+<h1 id="整合Gulp任务">整合Gulp任务</h1><hr>
+<p>我们总结下目前所完成的工作。当前我们创建了两组不同类型的Gulp任务。<br>第一组针对开发流程，依次我们将Sass编译为CSS，监测变化并重新加载浏览器。</p>
+<p>第二组针对优化流程，为生产环境准备好所有文件。在此流程中，我们优化CSS，JavaScript和图片资源，并且将字体文件从<code>app</code>目录拷贝至<code>dist</code>目录。<br>我们通过<code>gulp watch</code>命令将第一组任务整合到一起。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'browserSync'</span>, <span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ... watchers</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们将运行第二组构成的任务创建生产环境的站点。这些任务包括<code>clean:dist</code>, <code>sass</code>, <code>useref</code>, <code>images</code>,和<code>fonts</code>。</p>
+<p>如果我们依照同样的思路，我们可创建<code>bulid</code>任务来将所有任务整合到一起。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'build'</span>, [<span class="string">`clean`</span>, <span class="string">`sass`</span>, <span class="string">`useref`</span>, <span class="string">`images`</span>, <span class="string">`fonts`</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Building files'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>不幸的是，我们不能这样来写<code>bulid</code>任务，因为Gulp会将第二组参数的所有任务同时激活运行。</p>
+<p>在<code>clean</code>任务即删除整个<code>dist</code>目录前，先将<code>useref</code>,<code>images</code>,或<code>fonts</code>任务执行完毕，这是可以的。</p>
+<p>在清除任务之前为确保其他任务先执行，我们需要使用<a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="external">Run Sequence</a>插件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install run-sequence --save-dev</span><br></pre></td></tr></table></figure>
+<p>下面是使用run sequence执行一个序列任务的语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> runSequence = <span class="built_in">require</span>(<span class="string">'run-sequence'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'task-name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  runSequence(<span class="string">'task-one'</span>, <span class="string">'task-two'</span>, <span class="string">'task-three'</span>, callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当<code>task-name</code>运行时，Gulp将先运行<code>task-one</code>。当<code>task-one</code>运行完毕，Gulp将自动开始执行<code>task-two</code>。最后，<code>task-two</code>执行完毕时，开始执行<code>task-three</code>任务。</p>
+<p>Run Sequence同样运行你同时执行一些任务，只需将他们放在一个数组中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'task-name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  runSequence(<span class="string">'task-one'</span>, [<span class="string">'tasks'</span>,<span class="string">'two'</span>,<span class="string">'run'</span>,<span class="string">'in'</span>,<span class="string">'parallel'</span>], <span class="string">'task-three'</span>, callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>本例中，Gulp先运行<code>task-one</code>。当<code>task-one</code>执行完毕时，Gulp将同时运行第二组的每个任务。运行<code>task-three</code>前，第二组的任务必须先执行完毕。<br>因此，我们现在创建任务先将<code>clean:dist</code>执行完毕，然后再执行其他任务。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'build'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  runSequence(<span class="string">'clean:dist'</span>,</span><br><span class="line">    [<span class="string">'sass'</span>, <span class="string">'useref'</span>, <span class="string">'images'</span>, <span class="string">'fonts'</span>],</span><br><span class="line">    callback</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>同样我们可以为第一组任务创建一个任务序列。我们将其命名为<code>default</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  runSequence([<span class="string">'sass'</span>,<span class="string">'browserSync'</span>, <span class="string">'watch'</span>],</span><br><span class="line">    callback</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>为何命名为<code>default</code>，因为当你有一个任务名叫<code>default</code>时，你只需在命令行执行<code>gulp</code>时，和执行<code>gulp default</code>是一样的，这省去多敲几个字。</p>
+<p>最后，这是目前我们所完成内容的<a href="https://github.com/zellwk/gulp-starter-csstricks" target="_blank" rel="external">github repo</a></p>
+<hr>
+<h1 id="收尾">收尾</h1><hr>
+<p>我们走了一遍Gulp基础并且创建了一套工作流来编译Sass为CSS，同时当文件变化时监测HTML和JS文件。我们可以在命令行运行<code>gulp</code>来执行此任务。</p>
+<p>同样我们创建了第二组任务，<code>build</code>，为生产环境创建<code>dist</code>目录。我们将Sass文件编译为CSS文件，优化所有资源并且将所有必要文件拷贝至<code>dist</code>目录。要运行此任务，只需在命令行输入<code>gulp build</code>。<br>最后，我们通过<code>clean</code>任务从生成的<code>dist</code>目录中清除素所有成成的图片缓存——允许我们移除在<code>dist</code>目录中无意保留的旧文件。<br>到此为止，我们为多数的Web开发者创建了一套强劲的工作流。对于Gulp和工作流来说，我们仍有很多东西值得开发来让任务流更好。这里有一些想法供你参考。</p>
+<h3 id="针对开发流程">针对开发流程</h3><ul>
+<li>使用<a href="https://www.npmjs.com/package/gulp-autoprefixer" target="_blank" rel="external">Autoprefixer</a>来处理CSS浏览器前缀问题</li>
+<li>添加<a href="https://www.npmjs.com/package/gulp-sourcemaps" target="_blank" rel="external">Sourcemaps</a>让debugging更方便</li>
+<li>通过<a href="https://www.npmjs.com/package/sprity" target="_blank" rel="external">sprity</a>创建精灵图</li>
+<li>用<a href="https://www.npmjs.com/package/gulp-changed" target="_blank" rel="external">gulp-changed</a>只编译变化的文件</li>
+<li>用<a href="https://css-tricks.com/gulp-for-beginners/" target="_blank" rel="external">Babel</a>或<a href="https://www.npmjs.com/package/gulp-traceur" target="_blank" rel="external"> Traceur</a>书写ES6</li>
+<li>用<a href="http://browserify.org/" target="_blank" rel="external">Browserify</a>， <a href="https://github.com/webpack/webpack" target="_blank" rel="external">webpack</a>或[<a href="https://github.com/jspm]来模块化JavaScript文件" target="_blank" rel="external">https://github.com/jspm]来模块化JavaScript文件</a></li>
+<li>使用模板引擎<a href="https://www.npmjs.com/package/gulp-handlebars" target="_blank" rel="external">Handlebars</a>或(Swig)来模块化HTML文件</li>
+<li>使用<a href="https://www.npmjs.com/package/require-directory" target="_blank" rel="external">require-dir</a>将gulpfile分割为小文件</li>
+<li>使用<a href="https://www.npmjs.com/package/gulp-modernizr" target="_blank" rel="external">gulp-modernizr</a>自动生成Modernizr脚本</li>
+</ul>
+<h3 id="针对优化">针对优化</h3><ul>
+<li>使用<a href="https://www.npmjs.com/package/gulp-uncss" target="_blank" rel="external">unCSS</a>移除无用CSS</li>
+<li>通过<a href="https://www.npmjs.com/package/gulp-csso" target="_blank" rel="external">CSSO</a>进一步优化CSS</li>
+<li>为性能优化，使用<a href="https://www.npmjs.com/package/critical" target="_blank" rel="external">Critical</a>生成内联CSS</li>
+</ul>
+<p>另外，针对开发和优化流程，你可以通过<a href="https://www.npmjs.com/package/gulp-jasmine" target="_blank" rel="external">gulp-jasmine</a>编写JavaScript测试单元，甚至通过<a href="https://www.npmjs.com/package/gulp-rsync" target="_blank" rel="external">gukp-rync</a>将<code>dist</code>文件夹自动部署至你的生产服务器。</p>
+<p>正如你所见，尽管我们之前所创建的工作流做了一些事情，我们还可以做更多。创建一套适合你的任务流是极其令人兴奋和具有成就感的，但对新手来说——路漫漫其修远兮。</p>
+<p>仅靠一篇文章甚至一系列文章难以将Gulp能做的都覆盖到，Zell写了本书叫<a href="http://zell-weekeat.com/automate-your-workflow/" target="_blank" rel="external">automating your workflow</a>,如果你感兴趣，你可免费获取<a href="http://zell-weekeat.com/automate-your-workflow/" target="_blank" rel="external">前十章</a>。</p>
+<hr>
+<h1 id="译者后说">译者后说</h1><hr>
+<p>经过近半个月的时间，断断续续的利用琐碎时间，终于将此文翻译完毕。由于水平有限，如果错误及不准确之处，请大家见谅，可在评论区告知我。<br>如果此文对你有帮助，可通过下方的打赏方式对我打赏，这将是我继续翻译的额外动力。</p>
+
+      
+    </div>
+
+    <div class="post-footer">
+    
+    <! -- 添加捐赠图标 -->
+    
+    
+
+    <div class ="post-donate">
+      <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="Donate 打赏"></a>
+        <span class="donate_txt">
+           &uarr;<br>
+           
+            Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                     
+        </span>
+        <br>
+      </div>  
+  
+      <div id="donate_guide" class="donate_bar center hidden">
+        
+          <a href="/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0"       style="float:left;margin-left:25%;margin-right:2px;">
+          <img src="/alipay.jpg" title="支付宝打赏" height="164px" width="164px">
+          </a> 
+          
+
+      
+       <a href="/wechat.jpg" title="微信打赏" class="fancybox" rel="article0">
+         <img src="/wechat.jpg" title="微信打赏" height="164px" width="164px">
+       </a>
+      
+    
+      </div>
+  
+      <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+          $('#donate_board').addClass('hidden');
+          $('#donate_guide').removeClass('hidden');
+        }
+      </script>
+    </div>
+
+    
+
+<! -- 添加捐赠图标 -->
+
+
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Gulp/"> #Gulp </a>
+          
+            <a href="/tags/前端自动化/"> #前端自动化 </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/18/hello-world/">Hello World</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+
+<div class="ds-share" data-thread-key="2015/11/26/Gulp-for-Beginners/" data-title="Gulp初学者指南" data-images="http://kalechao87.github.io/2015/11/26/Gulp-for-Beginners/" data-content="一篇不错的文章，推荐给大家！" data-url="http://kalechao87.github.io/2015/11/26/Gulp-for-Beginners/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">        
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>  
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>              
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+
+          <!-- 评论框 -->
+          <div class="ds-thread" data-thread-key="2015/11/26/Gulp-for-Beginners/"
+               data-title="Gulp初学者指南" data-url="http://kalechao87.github.io/2015/11/26/Gulp-for-Beginners/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+
+          
+         
+        </div>        
+      </div>
+               
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/avatar.jpg" alt="Kale Chao" />
+          <p class="site-author-name">Kale Chao</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+        </div>
+
+        
+
+        
+          <div class="links-of-author motion-element">
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/kalechao87" target="_blank">GitHub</a>
+            </span>
+                      
+           </div>
+        
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank" rel="external nofollow"> 
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+     
+        
+        
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gulp概述"><span class="nav-text">Gulp概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Gulp"><span class="nav-text">安装Gulp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建Gulp工程项目"><span class="nav-text">创建Gulp工程项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决定项目目录结构"><span class="nav-text">决定项目目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进行第一项Gulp任务"><span class="nav-text">进行第一项Gulp任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gulp预处理流程"><span class="nav-text">Gulp预处理流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Globbing_in_Node（在Node中通配）"><span class="nav-text">Globbing in Node（在Node中通配）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sass文件改变时进行实时监控"><span class="nav-text">Sass文件改变时进行实时监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Browser_Sync自动刷新(重加载)"><span class="nav-text">通过Browser Sync自动刷新(重加载)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化CSS和JavaScript文件"><span class="nav-text">优化CSS和JavaScript文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化图片"><span class="nav-text">优化图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将Fonts目录复制至Dist目录"><span class="nav-text">将Fonts目录复制至Dist目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动清理生成的文件"><span class="nav-text">自动清理生成的文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#整合Gulp任务"><span class="nav-text">整合Gulp任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收尾"><span class="nav-text">收尾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#针对开发流程"><span class="nav-text">针对开发流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#针对优化"><span class="nav-text">针对优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#译者后说"><span class="nav-text">译者后说</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+    </div>
+
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+
+  <span class="author"> Kale Chao</span>
+</div>
+
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Clone theme
+  <a class="theme-link" href="https://github.com/xirong/hexo-theme-next" rel="external nofollow">
+    NexT
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <!-- <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script> -->
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  <!-- <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|UCBrowser|MQQBrowser|Blazer|PSP|IEMobile|Symbian|Mobile|samsung|htc/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+
+  function displaySidebar () {
+    setTimeout(function () {
+      $('.sidebar-toggle').trigger('click');
+    }, 800);
+  }
+
+</script>
+ -->
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebarToggleMotion();
+    postsListMotion();
+    backToTopMotion();    
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+//search animate
+$(function(){
+   $('#ts-search-input').focus(function() {  //设置获得焦点时的方法，让文本框变长
+    $(this).animate({width: "150"}, 300 );  
+    $(this).val(''); //用于清空内容，可选操作
+   });
+ 
+   $('#ts-search-input').blur(function() {  //设置失去焦点时的方法，让文本框变短
+    $(this).animate({width: "70"}, 300 );
+   });
+});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebarToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      if (isDesktop() && HEXO_SIDEBAR_CONFIGURATION === 'post') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+
+
+
+   <script type="text/javascript">
+    var HEXO_SIDEBAR_CONFIGURATION = 'post';
+    $(document).ready(function () {
+      if (HEXO_SIDEBAR_CONFIGURATION === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kalechao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+  
+</body>
+</html>
