@@ -10,7 +10,7 @@
 <meta http-equiv=”Cache-Control” content=”no-siteapp” />
 
 
-  <meta name="keywords" content="前端, HTML, CSS, JavaScript " />
+  <meta name="keywords" content=" ,command line,前端自动化,命令行, " />
 
 
 
@@ -41,7 +41,7 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
 
 
-  <title> Hello World - FakeCityMan's Blog </title>
+  <title> 【译】如何克服你对命令行的恐惧 - FakeCityMan's Blog </title>
 </head>
 
 <body>
@@ -181,7 +181,7 @@
           
           
             
-              Hello World
+              【译】如何克服你对命令行的恐惧
             
           
         </h1>
@@ -189,17 +189,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-11-18
+          发表于 2016-01-12
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/前端自动化/">前端自动化</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/11/18/hello-world/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/18/hello-world/"></span>
+            <a href="/2016/01/12/How-to-overcome-your-fear-of-the-command-line/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/12/How-to-overcome-your-fear-of-the-command-line/"></span>
             </a>
           </span>
           
@@ -213,15 +224,57 @@
       
 
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <blockquote>
+<p>前端自动化中，使用命令行是不可避免的，对于像我这样的新手来讲确是痛点。本文为<a href="http://www.zell-weekeat.com/" target="_blank" rel="external">Zell Liew</a> <a href="http://www.zell-weekeat.com/fear-of-command-line/" target="_blank" rel="external">《How to overcome your fear of the command line》</a>译文。通过讲解6个常用基础的命令行命令达到入门效果，使用命令行并没那么难，多数时候只是被自己的想象吓退了，开始行动是唯一的出路。<br>——<a href="https://github.com/kalechao87" target="_blank" rel="external">Kale Chao | FakeCityMan</a></p>
+</blockquote>
+<a id="more"></a>
+<p>多数帮你实现自动化流程的工具不可避免的灰使用命令行工具。因此，首先要跨越的障碍是要适应命令行的使用。<br>但是，命令行有些让人望而生畏。<br>在你的想象中（译者注：），使用命令行就像拆炸弹，感觉随时都会爆炸一样。一步走错就意味着人生的终结，随之而去的还有你的电脑。<br>最初我开始编程的时候我不敢碰它，感觉命令行工具是专家级的高手才会使用的工具。<br>然而，随着我对他的了解越来越多，我开始意识到命令行工具一点儿也不可怕。甚至对于初学者来讲，它不仅难以置信的安全并且任何人可以用它来改善你的工作流。<br>本文我将为你展示命令行为何不可怕，并让你开始适应它。<br>准备好了？我们开始！</p>
+<hr>
+<h1 id="启动命令行">启动命令行</h1><hr>
+<p>命令行是书写代码并在你的操作系统中运行的程序。<br>你的操作系统应该内置了命令行工具，Mac上叫终端（Terminal），Windows下叫命令提示符（Command Prompt）。启动它，你看到了它的界面。（注：对于Windows用户来讲，建议使用基于linux型的命令行模拟器，如<a href="http://cmder.net/" target="_blank" rel="external">Cmder</a>,因为Windows自带的命令行工具与基于linux的Mac或Linux系统的命令使用方式是有区别的。）</p>
+<p>这是命令行工具在Mac上的样子。<br><img src="/images/command-line/command-line.png" alt="command line on Mac"><br>这是Cmder在Windows下的样子。<br><img src="/images/command-line/cmder-on-windows.png" alt="cmder on windows"><br>你突然不知所措，界面上并没如何开始的指导，每个你输入的东西似乎都返回了一个错误。<br>难怪它让人如此惧怕！<br>好了，不要担心。</p>
+<hr>
+<h1 id="你输入的不会弄坏你的电脑">你输入的不会弄坏你的电脑</h1><hr>
+<p>即使你输入了多条无效的命令。<br>当你输入一条无效命令时，命令行工具会显示一条错误信息，然后什么都不会做。<br>这里是一个当你输入一条无效命令的例子</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>blah</span><br></pre></td></tr></table></figure>
+<p>译者注：无需输入<code>$</code><br><img src="/images/command-line/invalid-command.png" alt="invalid command"><br>你除了得到一条“命令没找到”的提示，没有其他事情发生。你仍然安全，电脑也不会爆炸。<br>唯一一条你需小心的命令是<code>rm</code>命令。这意味着永久删除文件，回收站也找不回来。<br>接下来，你将学到你可使用的一些命令。这些来自<a href="http://ss64.com/osx/" target="_blank" rel="external">命令集合列表</a>，但你只需知道其中的6个命令。</p>
+<hr>
+<h1 id="6条你所需要知道的命令">6条你所需要知道的命令</h1><hr>
+<p>这6条你需要知道的命令是：</p>
+<ol>
+<li>pwd</li>
+<li>cd</li>
+<li>ls</li>
+<li>mkdir</li>
+<li>touch</li>
+<li>clear</li>
+</ol>
+<p>我们来逐条解释。</p>
+<h2 id="pwd">pwd</h2><p><code>pwd</code>为打印当前工作目录（print working directory），它所做的就是让你在终端中知道你当前所在的路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/pwd.png" alt="pwd"></p>
+<h2 id="ls">ls</h2><p><code>ls</code>为列出文件（list files）。如果你输入这条命令，你会得到你当前目录下所有的文件和文件夹列表。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>ls</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/ls.png" alt="ls"><br>本利中，在我的当前工作目录中，你看到我有诸如Desktop, Music, Pictures 和Library之类的文件夹。<br>这条命令对于对你接下来接触到的这条命令很有用。</p>
+<h2 id="cd">cd</h2><p><code>cd</code>为改变切换目录（change directory）。它让你从当前目录切换到不同的文件夹中 。它是最常用的命令。<br>结合<code>ls</code>命令使用，你会很方便看到你可以切换的目录。<br>如果你想切换至Desktop目录，我所需做的只是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> Desktop</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/cd.png" alt="cd"><br>如果你想返回上层目录，你只需在<code>cd</code>后输入<code>..</code>（cd后跟空格，linux下必须有）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/cd2.png" alt="cd2"><br>你可以重复的结合使用<code>ls</code>,<code>cd</code>命令来进入你想去的目录。<br>这儿有个很贴心的功能。在Mac终端，你可以输入cd然后将文件夹拖入命令行，它将自动补全路径。<br><img src="/images/command-line/cd-drag.gif" alt="cd drag"></p>
+<h2 id="mkdir">mkdir</h2><p><code>mkdir</code>为创建目录（make directory）。这个就和你右键点击创建新文件夹一样。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>mkdir testing</span><br></pre></td></tr></table></figure></p>
+<p>这样就创建了teting文件夹目录。<br><img src="/images/command-line/mkdir.png" alt="mkdir"></p>
+<h2 id="touch">touch</h2><p><code>touch</code>为创建文件的命令。通过<code>touch</code>你可以创建任何类型的文件。<br><figure class="highlight irpf90"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">touch</span> <span class="built_in">index</span>.html</span><br></pre></td></tr></table></figure></p>
+<p>这条命令意味着在当前工作目录创建了一个以<code>html</code>为扩展名的<code>index</code>文件。<br><img src="/images/command-line/touch.png" alt="touch"></p>
+<h2 id="clear">clear</h2><p><code>clear</code>为清除终端屏幕。它将移除终端界面所有内容，带给你和刚打开终端界面一样的干净界面。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>clear</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/clear.png" alt="clear"><br>到此，这就是你所需知道可以有效使用命令行工具的6条命令。</p>
+<p>此时，你可能开始琢磨在互联网经常见到的一些命令，如<code>git</code>, <code>bower</code>, <code>npm</code>, <code>gulp</code>等等。<br>这些并不是系统自带命令行工具内置的命令。除非你安装了它们各自的m命令行界面工具/CLIs(command line interfaces)才能使用这些命令。<br>这意味着当前你不用考虑琢磨这些命令。当你了解它们后，你可以挨个掌握它们。<br>即使你使用这些额外的命令发生一些错误，你仍然是安全的。我们以<code>git</code>为例看个例子。</p>
+<hr>
+<h1 id="其他CLIs的附加命令">其他CLIs的附加命令</h1><hr>
+<p>使用<code>git</code>命令，先确保你的机器上安装了Git。<br>Git在Mac上已经预装，Mac用户可以先跳过安装步骤。Windows用户需要先<a href="https://git-scm.com/download/win" target="_blank" rel="external">安装Git</a>。<br>Git安装好后，你就可以使用Git提供的命令了。<br>如果你输入一条无效命令，你将看到一堆“可怕”的文字。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/command-line/git1.png" alt="git1"><br>我们一个部分一个部分的看。这是第一部分：<br><img src="/images/command-line/git2.png" alt="git2"><br>这里我们看到<code>git</code>命令不是单独使用的。你需要在后面附加一条参数或一条命令。<br>像这些命令可以起作用：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git --version <span class="comment"># shows you the version of git installed</span></span><br><span class="line"><span class="variable">$ </span>git --help <span class="comment"># shows git help</span></span><br></pre></td></tr></table></figure></p>
+<p>第二部分这么一大块告诉你人们经常使用的Git命令。<br><img src="/images/command-line/git3.png" alt="git3"><br>其中一个是<code>checkout</code>命令，你可以check out（校验）一条分支。这是如何使用的一条例子<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git checkout development <span class="comment"># checks out the development branch</span></span><br></pre></td></tr></table></figure></p>
+<p>最后一部分是告诉你如果需要更多帮助时所需输入的命令。<br><img src="/images/command-line/git4.png" alt="git4"><br>如你所见，即使你输入无效命令，什么也没损坏。命令行足够智能来提示你错误并且请求你输入正确的命令。</p>
+<hr>
+<h1 id="总结">总结</h1><hr>
+<p>我们涵盖了最基础的命令行使用方式，你也看到没什么可怕的。我们也同样看了下以<code>git</code>为例的其他CLIs的使用方式。希望这篇文章能帮助客服你对命令行工具使用的恐惧。<br>如果你现在不理解<code>git</code>命令，这没关系。每个CLI有它自己的一组使用命令，你可以通过它们的文档或看网上教程来学习它们。<br>现在最重要的是你要对命令行工具进行实践，以确保你可以随心所欲的使用它。<br>另外，如果你想更深入的去玩命令行工具，建议你看下<a href="https://twitter.com/wesbos" target="_blank" rel="external">Wes Bos</a>出品的<a href="http://commandlinepoweruser.com/" target="_blank" rel="external">免费命令行教学视频系列</a>。</p>
+<p>赶快试试本文提到的6条命令——<code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>touch</code>,和<code>clear</code>。</p>
+<p>如果此文对你有帮助，可通过下方的打赏方式对我打赏，这将是我继续翻译的额外动力。</p>
 
       
     </div>
@@ -273,16 +326,26 @@
 
 
       
+        <div class="post-tags">
+          
+            <a href="/tags/command-line/"> #command line </a>
+          
+            <a href="/tags/前端自动化/"> #前端自动化 </a>
+          
+            <a href="/tags/命令行/"> #命令行 </a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/26/Gulp-for-Beginners/">Gulp初学者指南</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/26/Gulp-for-Beginners/">Gulp初学者指南</a>
             
           </div>
         </div>
@@ -299,7 +362,7 @@
       <div class="comments" id="comments">
         
 
-<div class="ds-share" data-thread-key="2015/11/18/hello-world/" data-title="Hello World" data-images="http://kalechao87.github.io/2015/11/18/hello-world/" data-content="一篇不错的文章，推荐给大家！" data-url="http://kalechao87.github.io/2015/11/18/hello-world/">
+<div class="ds-share" data-thread-key="2016/01/12/How-to-overcome-your-fear-of-the-command-line/" data-title="【译】如何克服你对命令行的恐惧" data-images="http://kalechao87.github.io/2016/01/12/How-to-overcome-your-fear-of-the-command-line/" data-content="一篇不错的文章，推荐给大家！" data-url="http://kalechao87.github.io/2016/01/12/How-to-overcome-your-fear-of-the-command-line/">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">        
         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
@@ -314,8 +377,8 @@
  </div>
 
           <!-- 评论框 -->
-          <div class="ds-thread" data-thread-key="2015/11/18/hello-world/"
-               data-title="Hello World" data-url="http://kalechao87.github.io/2015/11/18/hello-world/">
+          <div class="ds-thread" data-thread-key="2016/01/12/How-to-overcome-your-fear-of-the-command-line/"
+               data-title="【译】如何克服你对命令行的恐惧" data-url="http://kalechao87.github.io/2016/01/12/How-to-overcome-your-fear-of-the-command-line/">
           </div>
         
       </div>
@@ -415,7 +478,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#启动命令行"><span class="nav-text">启动命令行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你输入的不会弄坏你的电脑"><span class="nav-text">你输入的不会弄坏你的电脑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6条你所需要知道的命令"><span class="nav-text">6条你所需要知道的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd"><span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls"><span class="nav-text">ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir"><span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-text">touch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clear"><span class="nav-text">clear</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他CLIs的附加命令"><span class="nav-text">其他CLIs的附加命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
